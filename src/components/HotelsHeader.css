@@ -1,0 +1,36 @@
+.hotel-header {
+  margin-bottom: 50px;
+}
+.header-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.header-top input {
+  padding: 0.6rem 1rem;
+}
+
+.header-bottom {
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  background-color: rgb(230, 230, 230);
+}
+
+.checkbox-container {
+  display: flex;
+}
+
+.checkbox-element {
+  display: flex;
+  align-items: center;
+}
+
+.checkbox-element p {
+  margin-right: 0.5rem;
+  margin-left: 2rem;
+}

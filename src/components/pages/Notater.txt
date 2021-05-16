@@ -1,0 +1,7 @@
+Notater
+- Kontakt page
+- About page
+- Ordring page
+- login/admin page
+- Filter
+- calander

@@ -1,0 +1,38 @@
+.hotel-detail-heading {
+  margin-bottom: 25px;
+}
+
+.hotel-detail-card {
+  display: flex;
+  flex-direction: column;
+}
+.blue {
+  color: #14abef;
+}
+
+.pink {
+  color: #f22178;
+}
+
+.hotel-detail-rating {
+  margin: 1rem 0;
+}
+
+.hotel-detail-rating img {
+  width: 150px;
+  height: auto;
+}
+.hotel-detail-price {
+  margin-bottom: 2rem;
+}
+
+.hotel-detail-description {
+  margin-bottom: 2rem;
+}
+
+@media screen and (min-width: 1000px) {
+  .hotel-detail-card {
+    flex-direction: row;
+    gap: 2rem;
+  }
+}

@@ -1,0 +1,17 @@
+:root {
+  --primary-color: #1b232d;
+  --blue: #14abef;
+}
+
+.hotel-card-container h1 {
+  color: var(--primary-color);
+  margin-bottom: 50px;
+}
+
+.hotel-card-row {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 2rem;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
