@@ -30,6 +30,58 @@
   margin-bottom: 2rem;
 }
 
+.book-now-container .form-control > input {
+  padding: 1rem;
+}
+
+.book-now-header {
+  margin: 1rem 0;
+  background-color: #14abef;
+  color: #fff;
+  border-radius: 5px;
+}
+
+.book-now-p {
+  padding: 1rem;
+  line-height: 1.4rem;
+  letter-spacing: 1px;
+}
+
+.book-now-header span {
+  text-decoration: underline;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.booking-form-footer {
+  color: #9b9b9b;
+  margin: 1rem 0;
+}
+
+select {
+  width: 100%;
+  padding: 1rem;
+  font-size: 1.2rem;
+  border: 1px solid #d5d5d5;
+}
+
+@media only screen and (min-width: 900px) {
+  .form-group {
+    justify-content: space-between;
+    flex-direction: row;
+    gap: 2rem;
+  }
+
+  .form-control {
+    flex: 1;
+  }
+}
+
 @media screen and (min-width: 1000px) {
   .hotel-detail-card {
     flex-direction: row;

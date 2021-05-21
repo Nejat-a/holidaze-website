@@ -1,5 +1,4 @@
 import "../App.css";
-import { Button } from "./Button";
 import "./HeroSection.css";
 import { MainSearch } from "./MainSearch";
 

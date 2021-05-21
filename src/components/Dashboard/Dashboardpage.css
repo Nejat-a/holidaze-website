@@ -1,0 +1,67 @@
+.dashboard-header h1 {
+  color: #1b232d;
+  margin-bottom: 1rem;
+}
+
+.dashboard-header p {
+  color: #1b232d;
+  margin-bottom: 1rem;
+}
+.dashboard-item {
+  margin-bottom: 1rem;
+}
+.dashboard-content i {
+  font-size: 1.4rem;
+  margin-right: 10px;
+}
+.dashboard-messages-header,
+.dashboard-bookings-header,
+.dashboard-hotel-header {
+  background-color: #14abef;
+  color: #fff;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.msg-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.msg-head i {
+  color: #14abef;
+}
+.msg-container {
+  background-color: rgb(240, 240, 240);
+  padding: 1rem;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+.msg-content {
+  margin-top: 1rem;
+  background-color: #fff;
+  line-height: 2rem;
+}
+
+.extra-padding {
+  padding: 1.5rem;
+}
+
+.booking-head {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  background-color: rgb(240, 240, 240);
+  padding: 1rem;
+}
+
+.dashboard-item p {
+  line-height: 2rem;
+}
+
+.add-hotels {
+  margin-bottom: 50px;
+}

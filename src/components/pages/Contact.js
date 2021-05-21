@@ -1,6 +1,49 @@
 import "./Contact.css";
 import { Button } from "../Button";
+import { useForm } from "react-hook-form";
+import * as yup from "yup";
+import { yupResolver } from "@hookform/resolvers/yup";
+import { useState } from "react";
+import axios from "axios";
+
+const schema = yup.object().shape({
+  name: yup.string().required("Please enter your name"),
+  email: yup
+    .string()
+    .required("Please enter an email address")
+    .email("Please enter a valid email address"),
+  message: yup
+    .string()
+    .required("Please enter your message")
+    .min(10, "The message must be at least 10 characters"),
+});
 export const Contact = () => {
+  function getdata(e) {
+    console.log(e.target.value);
+  }
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm({
+    resolver: yupResolver(schema),
+  });
+
+  const [successMsg, setSuccessMsg] = useState("");
+
+  const onSubmit = (info) => {
+    async function postMsg() {
+      await axios.post("http://localhost:1337/messages", {
+        name: info.name,
+        email: info.email,
+        message: info.message,
+      });
+    }
+
+    postMsg();
+
+    setSuccessMsg(`Thank you ${info.name}! Message is sent.`);
+  };
   return (
     <div className="contact-container">
       <div className="page-inner">
@@ -23,7 +66,7 @@ export const Contact = () => {
               </div>
               <div className="contact-contact-icons">
                 <div className="contact-contact-icons-left">
-                  <i class="far fa-envelope"></i> Email
+                  <i className="far fa-envelope"></i> Email
                 </div>
                 <div className="contact-contact-icons-right">
                   helpdesk@holidaze.com
@@ -31,25 +74,34 @@ export const Contact = () => {
               </div>
               <div className="contact-contact-icons">
                 <div className="contact-contact-icons-left">
-                  <i class="fas fa-map-marker-alt"></i> Address
+                  <i className="fas fa-map-marker-alt"></i> Address
                 </div>
                 <div className="contact-contact-icons-right">
                   Tufteveien 4, Bergen
                 </div>
               </div>
             </div>
-            <form className="contact-form">
+            <form
+              className="contact-form"
+              id="contactForm"
+              onSubmit={handleSubmit(onSubmit)}
+            >
+              <p className="successMsg">{successMsg}</p>
               <div className="form-control">
                 <label>Name</label>
-                <input type="text" />
+                <input type="text" {...register("name")} />
+                {errors.name && <span>{errors.name.message}</span>}
               </div>
               <div className="form-control">
                 <label>Email</label>
-                <input type="email" />
+                <input type="email" {...register("email")} />
+                {errors.email && <span>{errors.email.message}</span>}
               </div>
+              <input type="file" onChange={(e) => getdata(e)} />
               <div className="form-control">
                 <label>Message</label>
-                <textarea />
+                <textarea {...register("message")} />
+                {errors.message && <span>{errors.message.message}</span>}
               </div>
               <Button>Send</Button>
             </form>

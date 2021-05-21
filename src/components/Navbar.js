@@ -1,13 +1,20 @@
-import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { useState, useEffect, useContext } from "react";
+import { Link, useHistory } from "react-router-dom";
 import { Button } from "./Button";
 import "./Navbar.css";
 import logo from "../images/logo.png";
+import AuthContext from "../context/AuthContext";
 
 export const Navbar = () => {
+  const [auth, setAuth] = useContext(AuthContext);
   const [click, setclick] = useState(false);
   const [button, setButton] = useState(true);
   const handleClick = () => setclick(!click);
+  const history = useHistory();
+  const logout = () => {
+    setAuth(null);
+    history.push("/signin");
+  };
   const closeMobileMenu = () => {
     setclick(false);
     document.body.scrollTop = 0;
@@ -70,17 +77,39 @@ export const Navbar = () => {
                 B&Bs
               </Link>
             </li>
-            <li className="nav-item">
-              <Link
-                to="/signin"
-                className="nav-links-mobile"
-                onClick={closeMobileMenu}
-              >
-                Sign in
-              </Link>
-            </li>
+            {auth ? (
+              <>
+                <li className="nav-item">
+                  <Link
+                    to="/dashboard"
+                    className="nav-links"
+                    onClick={closeMobileMenu}
+                  >
+                    <Button>Dashborad</Button>
+                  </Link>
+                </li>
+                <li className="nav-item">
+                  <Link
+                    to="/signin"
+                    className="nav-links"
+                    onClick={closeMobileMenu}
+                  >
+                    <Button onClick={logout}>Sign out</Button>
+                  </Link>
+                </li>
+              </>
+            ) : (
+              <li className="nav-item">
+                <Link
+                  to="/signin"
+                  className="nav-links"
+                  onClick={closeMobileMenu}
+                >
+                  <Button buttonStyle="btn--outline">Signin</Button>
+                </Link>
+              </li>
+            )}
           </ul>
-          {button && <Button buttonStyle="btn--outline">Sign up</Button>}
         </div>
       </nav>
     </>

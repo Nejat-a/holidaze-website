@@ -1,6 +1,5 @@
 import { BASE_URL } from "../constants/Api";
 import { useEffect, useState } from "react";
-import { Button } from "./Button";
 import { Link } from "react-router-dom";
 
 export const MainSearch = () => {
@@ -50,7 +49,10 @@ export const MainSearch = () => {
         placeholder="Search by hotel name ..."
         onChange={(e) => handleChange(e)}
       />
-      <ul className={`search-suggestion ${filteredHotels.length && "padding"}`}>
+      <ul
+        className={`search-suggestion ${filteredHotels.length && "padding"}`}
+        key={hotels.length}
+      >
         {filteredHotels.map((hotel) => {
           const imgURL = hotel.image[0].url;
           const { id, name, location, descriptions, features, price, rating } =
@@ -75,13 +77,6 @@ export const MainSearch = () => {
           );
         })}
       </ul>
-      {/* <Button
-        className="btn"
-        buttonStyle="btn--outline"
-        buttonSize="btn--large"
-      >
-        Search
-      </Button> */}
     </div>
   );
 };

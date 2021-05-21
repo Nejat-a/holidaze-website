@@ -1,7 +1,16 @@
 Notater
-- Kontakt page
-- About page
-- Ordring page
+-search with date
+- booking page
 - login/admin page
 - Filter
 - calander
+- image folder, every thing shoud be inside src images folder
+- Contact page, reset fileds on submit
+- find right styling method
+- Close search button?
+- Hotel features
+- Close contactform and booking form
+- sett error and loading visible on all page with fetch
+- date format
+
+- msg content should anly open current msg
