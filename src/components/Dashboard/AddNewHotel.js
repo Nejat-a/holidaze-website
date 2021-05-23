@@ -33,7 +33,7 @@ export const AddNewHotel = () => {
   const addHotelURL = BASE_URL + "/hotels";
   const history = useHistory();
   const [successMsg, setSuccessMsg] = useState("");
-  const [auth, setAuth] = useContext(AuthContext);
+  const [auth] = useContext(AuthContext);
 
   if (!auth) {
     history.push("/signin");

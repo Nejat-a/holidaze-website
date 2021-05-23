@@ -10,7 +10,7 @@ export const Emails = () => {
   const [messages, setMessages] = useState([]);
   const [error, setError] = useState(null);
   const [showMessageContent, setshowMessageContent] = useState(false);
-  const [auth, setAuth] = useContext(AuthContext);
+  const [auth] = useContext(AuthContext);
 
   const showMsgContent = () => {
     setshowMessageContent(!showMessageContent);

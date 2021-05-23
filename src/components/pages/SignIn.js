@@ -1,6 +1,6 @@
 import "../../App.css";
 import { Button } from "../Button";
-import { set, useForm } from "react-hook-form";
+import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useState, useContext } from "react";
@@ -31,7 +31,7 @@ export const SignIn = () => {
   const [submitting, setSubmitting] = useState(false);
   const [loginError, setLoginError] = useState(null);
   const history = useHistory();
-  const [auth, setAuth] = useContext(AuthContext);
+  const [setAuth] = useContext(AuthContext);
 
   async function onSubmit(data) {
     setSubmitting(true);

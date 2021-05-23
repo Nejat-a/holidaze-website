@@ -3,17 +3,19 @@ import axios from "axios";
 import { useState, useEffect, useContext } from "react";
 import AuthContext from "../../context/AuthContext";
 import { BASE_URL } from "../../constants/Api";
+import { useHistory } from "react-router";
 const bookingsURL = BASE_URL + "/bookings";
 
 export const Bookings = () => {
   const [loading, setLoading] = useState(true);
   const [bookings, setBooking] = useState([]);
   const [error, setError] = useState(null);
-  const [auth, setAuth] = useContext(AuthContext);
+  const [auth] = useContext(AuthContext);
+  const history = useHistory();
 
   useEffect(() => {
     if (!auth) {
-      return;
+      history.push("/signin");
     }
     async function getbookings() {
       const token = auth.jwt;

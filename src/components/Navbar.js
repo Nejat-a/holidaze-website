@@ -9,6 +9,7 @@ export const Navbar = () => {
   const [auth, setAuth] = useContext(AuthContext);
   const [click, setclick] = useState(false);
   const [button, setButton] = useState(true);
+  console.log(button);
   const handleClick = () => setclick(!click);
   const history = useHistory();
   const logout = () => {

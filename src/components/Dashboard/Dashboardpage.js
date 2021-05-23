@@ -7,7 +7,7 @@ import { Bookings } from "./Bookings";
 import { EditHotels } from "./EditHotels";
 
 export const Dashboardpage = () => {
-  const [auth, setAuth] = useContext(AuthContext);
+  const [auth] = useContext(AuthContext);
   const [showMessagePanel, setshowMessagePanel] = useState(false);
   const [showBookingsPanel, setshowBookingsePanel] = useState(false);
   const [showEditHotelsPanel, setsshowEditHotelsPanel] = useState(false);
