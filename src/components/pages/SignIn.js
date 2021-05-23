@@ -77,7 +77,7 @@ export const SignIn = () => {
           <div className="form-control">
             <label>Password</label>
             <input
-              type="text"
+              type="password"
               {...register("password")}
               placeholder="Please enter your password"
             />
