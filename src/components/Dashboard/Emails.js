@@ -35,7 +35,7 @@ export const Emails = () => {
       }
     }
     getMessages();
-  }, []);
+  }, [auth]);
 
   if (loading) {
     return <div>Loading...</div>;
