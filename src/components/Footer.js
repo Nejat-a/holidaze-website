@@ -14,7 +14,7 @@ export default function Footer() {
       <section className="footer-subscription">
         <p className="footer-subscription-heading">Join our newsletter</p>
         <p className="footer-subscription-text">
-          We never send spams, only hotel deals
+          We never send spam, only hotel deals
         </p>
         <div className="input-areas">
           <form>
@@ -33,16 +33,16 @@ export default function Footer() {
           <div className="footer-link-items">
             <h2>About Us</h2>
             <div className="footer-about-text">
-              Holidaze is one of the biggest hotel Company in Bergen, Norway. We
-              have hundreds of hotels, Guesthouses and B&Bs.
+              Holidaze is one of the biggest hotel companies in Bergen, Norway.
+              We have hundreds of hotels, guesthouses and B&Bs.
             </div>
           </div>
 
           <div className="footer-link-items">
             <h2>Asets</h2>
             <div className="footer-about-text">
-              Many hotel images is downloaded from booking.com. This website is
-              for education purposes only.
+              Many hotel images is downloaded from https://www.scandichotels.no.
+              This website is for education purposes only.
             </div>
           </div>
 

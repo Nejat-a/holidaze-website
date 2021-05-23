@@ -106,7 +106,7 @@ export const Navbar = () => {
                   className="nav-links"
                   onClick={closeMobileMenu}
                 >
-                  <Button buttonStyle="btn--outline">Signin</Button>
+                  <Button buttonStyle="btn--outline">Sign in</Button>
                 </Link>
               </li>
             )}
