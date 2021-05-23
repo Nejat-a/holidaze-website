@@ -39,6 +39,10 @@ export const EditHotels = () => {
     return <div>Error! An error occured</div>;
   }
 
+  if (hotels.length === 0) {
+    return <div className="empty-items">No hotels in the database!!</div>;
+  }
+
   const handleClick = () => {
     document.body.scrollTop = 0;
     document.documentElement.scrollTop = 0;
@@ -61,7 +65,10 @@ export const EditHotels = () => {
         {hotels.map((hotel) => {
           const { id, name, location, descriptions, features, price, rating } =
             hotel;
-          const imgURL = hotel.image[0].url;
+          let imgURL = hotel.image[0].url;
+          if (imgURL === undefined) {
+            imgURL = `/uploads/placeholder_65441b3664.png`;
+          }
 
           return (
             <HotelCards

@@ -61,7 +61,8 @@
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
   box-shadow: 2px 2px 2px rgb(158, 158, 158);
-
+  max-height: 150px;
+  overflow-y: scroll;
   color: #1b232d;
   list-style-type: none;
 }

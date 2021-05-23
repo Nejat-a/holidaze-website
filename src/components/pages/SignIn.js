@@ -34,7 +34,6 @@ export const SignIn = () => {
   const [auth, setAuth] = useContext(AuthContext);
 
   async function onSubmit(data) {
-    console.log(data);
     setSubmitting(true);
     setLoginError(false);
     const body = {

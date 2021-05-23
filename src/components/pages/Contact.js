@@ -18,9 +18,6 @@ const schema = yup.object().shape({
     .min(10, "The message must be at least 10 characters"),
 });
 export const Contact = () => {
-  function getdata(e) {
-    console.log(e.target.value);
-  }
   const {
     register,
     handleSubmit,
@@ -97,7 +94,6 @@ export const Contact = () => {
                 <input type="email" {...register("email")} />
                 {errors.email && <span>{errors.email.message}</span>}
               </div>
-              <input type="file" onChange={(e) => getdata(e)} />
               <div className="form-control">
                 <label>Message</label>
                 <textarea {...register("message")} />

@@ -28,7 +28,6 @@ const schema = yup.object().shape({
     .integer()
     .lessThan(6, "rating should be between 1 and 5"),
   type: yup.string(),
-  image: yup.mixed(),
 });
 export const AddNewHotel = () => {
   const addHotelURL = BASE_URL + "/hotels";
@@ -59,7 +58,6 @@ export const AddNewHotel = () => {
           Type: info.type,
           price: parseFloat(info.price),
           rating: parseFloat(info.rating),
-          image: info.image,
         },
         {
           headers: {
@@ -79,7 +77,6 @@ export const AddNewHotel = () => {
         id="contactForm"
         onSubmit={handleSubmit(onSubmit)}
       >
-        <p className="successMsg">{successMsg}</p>
         <div className="form-group">
           <div className="form-control">
             <label>Hotel Name</label>
@@ -129,14 +126,11 @@ export const AddNewHotel = () => {
             <input type="number" {...register("rating")} />
             {errors.rating && <span>{errors.rating.message}</span>}
           </div>
-          <div className="form-control">
-            <label>Image</label>
-            <input type="file" {...register("image")} />
-          </div>
         </div>
         <p className="booking-form-footer">
           *Please recheck evrything before submitting the form.
         </p>
+        <p className="successMsg">{successMsg}</p>
         <Button>Save</Button>
       </form>
     </div>

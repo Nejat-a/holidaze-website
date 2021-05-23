@@ -65,3 +65,9 @@
 .add-hotels {
   margin-bottom: 50px;
 }
+
+.empty-items {
+  padding: 1rem;
+  color: #f22178;
+  text-align: center;
+}

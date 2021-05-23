@@ -43,6 +43,9 @@ export const Emails = () => {
   if (error) {
     return <div>An error has occured</div>;
   }
+  if (messages.length === 0) {
+    return <div className="empty-items">No incoming messages yet!</div>;
+  }
   return (
     <>
       {messages.map((msg) => {

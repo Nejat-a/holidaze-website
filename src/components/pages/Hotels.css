@@ -15,3 +15,44 @@
   gap: 2rem;
   flex-wrap: wrap;
 }
+
+.hotel-header {
+  margin-bottom: 50px;
+  display: flex;
+  flex-direction: column;
+}
+
+.page-title {
+  margin-bottom: 1rem;
+}
+
+.searchbox-container {
+  display: flex;
+  flex-direction: column;
+
+  gap: 10px;
+}
+
+.searchbox-container input {
+  padding: 1rem;
+  border: 1px solid #14abef;
+  border-radius: 5px;
+}
+
+.searchbox-container p {
+  color: #14abef;
+}
+@media only screen and (min-width: 1000px) {
+  .hotel-header {
+    margin-bottom: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .searchbox-container {
+    align-items: center;
+    flex-direction: row;
+    gap: 10px;
+  }
+}

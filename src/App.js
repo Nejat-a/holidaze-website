@@ -13,7 +13,6 @@ import { Contact } from "./components/pages/Contact";
 import { BookNow } from "./components/BookNow";
 import { AuthProvider } from "./context/AuthContext";
 import { Dashboardpage } from "./components/Dashboard/Dashboardpage";
-import { TestSearch } from "./components/pages/TestSearch";
 
 function App() {
   return (
@@ -33,7 +32,6 @@ function App() {
             <Route path="/booknow" component={BookNow} />
             <Route path="/signin" component={SignIn} />
             <Route path="/dashboard" component={Dashboardpage} />
-            <Route path="/testsearch" component={TestSearch} />
           </Switch>
           <Footer />
         </Router>

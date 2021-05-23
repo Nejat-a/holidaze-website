@@ -49,10 +49,7 @@ export const MainSearch = () => {
         placeholder="Search by hotel name ..."
         onChange={(e) => handleChange(e)}
       />
-      <ul
-        className={`search-suggestion ${filteredHotels.length && "padding"}`}
-        key={hotels.length}
-      >
+      <ul className={`search-suggestion ${filteredHotels.length && "padding"}`}>
         {filteredHotels.map((hotel) => {
           const imgURL = hotel.image[0].url;
           const { id, name, location, descriptions, features, price, rating } =

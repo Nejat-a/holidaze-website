@@ -32,7 +32,6 @@ export const BookNow = ({ hotels }) => {
   const [successMsg, setSuccessMsg] = useState("");
 
   const onSubmit = (info) => {
-    console.log(info);
     async function postMsg() {
       await axios.post("http://localhost:1337/bookings", {
         name: info.name,
@@ -45,11 +44,9 @@ export const BookNow = ({ hotels }) => {
     }
     postMsg();
     setSuccessMsg(
-      `Thank you ${info.name}! Yuo have successfuly booked your room!`
+      `Thank you ${info.name}! You have successfuly booked your room!`
     );
   };
-
-  console.log(errors);
 
   return (
     <div className="book-now-container">
@@ -66,7 +63,6 @@ export const BookNow = ({ hotels }) => {
           id="contactForm"
           onSubmit={handleSubmit(onSubmit)}
         >
-          <p className="successMsg">{successMsg}</p>
           <div className="form-group">
             <div className="form-control">
               <label>Full Name</label>
@@ -130,6 +126,7 @@ export const BookNow = ({ hotels }) => {
             *Please recheck evrything before submitting the form. We wish you a
             pleasant stay in our hotel.
           </p>
+          <p className="successMsg">{successMsg}</p>
           <Button>Confirm booking</Button>
         </form>
       </div>
