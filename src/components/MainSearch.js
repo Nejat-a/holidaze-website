@@ -51,16 +51,26 @@ export const MainSearch = () => {
       />
       <ul className={`search-suggestion ${filteredHotels.length && "padding"}`}>
         {filteredHotels.map((hotel) => {
-          const imgURL = hotel.image[0].url;
-          const { id, name, location, descriptions, features, price, rating } =
-            hotel;
-
+          let {
+            id,
+            name,
+            location,
+            descriptions,
+            features,
+            price,
+            rating,
+            imgURL,
+          } = hotel;
+          if (hotel.imgURL === null) {
+            imgURL =
+              "https://res.cloudinary.com/hb5n5nkav/image/upload/v1621779159/placeholder_ibkqxi.png";
+          }
           return (
             <Link to={`/hoteldetail/${id}`}>
               <li
                 key={hotel.id}
                 id={id}
-                imgURL={`${BASE_URL}${imgURL}`}
+                imgURL={imgURL}
                 name={name}
                 location={location}
                 rating={rating}

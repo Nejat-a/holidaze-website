@@ -69,14 +69,25 @@ export const BAndBs = () => {
       </header>
       <div className="hotel-card-row ">
         {filteredHotels.map((hotel) => {
-          const { id, name, location, descriptions, features, price, rating } =
-            hotel;
-          const imgURL = hotel.image[0].url;
+          let {
+            id,
+            name,
+            location,
+            descriptions,
+            features,
+            price,
+            rating,
+            imgURL,
+          } = hotel;
+          if (hotel.imgURL === null) {
+            imgURL =
+              "https://res.cloudinary.com/hb5n5nkav/image/upload/v1621779159/placeholder_ibkqxi.png";
+          }
           return (
             <HotelCards
               key={id}
               id={id}
-              imgURL={`${BASE_URL}${imgURL}`}
+              imgURL={imgURL}
               name={name}
               location={location}
               rating={rating}
