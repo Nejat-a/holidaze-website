@@ -4,6 +4,7 @@ import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useState } from "react";
 import axios from "axios";
+import { BASE_URL } from "../constants/Api";
 
 const schema = yup.object().shape({
   name: yup.string().required("Please enter your name"),
@@ -33,7 +34,7 @@ export const BookNow = ({ hotels }) => {
 
   const onSubmit = (info) => {
     async function postMsg() {
-      await axios.post("http://localhost:1337/bookings", {
+      await axios.post(BASE_URL + "/messages", {
         name: info.name,
         email: info.email,
         checkInDate: info.checkInDate,
