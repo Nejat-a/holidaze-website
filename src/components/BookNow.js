@@ -34,7 +34,7 @@ export const BookNow = ({ hotels }) => {
 
   const onSubmit = (info) => {
     async function postMsg() {
-      await axios.post(BASE_URL + "/messages", {
+      await axios.post(BASE_URL + "/bookings", {
         name: info.name,
         email: info.email,
         checkInDate: info.checkInDate,
