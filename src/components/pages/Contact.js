@@ -83,7 +83,6 @@ export const Contact = () => {
               id="contactForm"
               onSubmit={handleSubmit(onSubmit)}
             >
-              <p className="successMsg">{successMsg}</p>
               <div className="form-control">
                 <label>Name</label>
                 <input type="text" {...register("name")} />
@@ -99,6 +98,7 @@ export const Contact = () => {
                 <textarea {...register("message")} />
                 {errors.message && <span>{errors.message.message}</span>}
               </div>
+              <p className="successMsg">{successMsg}</p>
               <Button>Send</Button>
             </form>
           </div>
