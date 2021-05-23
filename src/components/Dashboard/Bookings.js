@@ -10,18 +10,19 @@ export const Bookings = () => {
   const [loading, setLoading] = useState(true);
   const [bookings, setBooking] = useState([]);
   const [error, setError] = useState(null);
-  const [auth] = useContext(AuthContext);
+  const [auth, setAuth] = useContext(AuthContext);
+  console.log(setAuth);
   const history = useHistory();
+  if (!auth) {
+    history.push("/signin");
+  }
 
   useEffect(() => {
-    if (!auth) {
-      history.push("/signin");
-    }
+    const token = auth.jwt;
+    const headers = {
+      Authorization: `Bearer ${token}`,
+    };
     async function getbookings() {
-      const token = auth.jwt;
-      const headers = {
-        Authorization: `Bearer ${token}`,
-      };
       try {
         const response = await axios.get(bookingsURL, { headers });
         setBooking(response.data);
@@ -32,7 +33,7 @@ export const Bookings = () => {
       }
     }
     getbookings();
-  }, []);
+  }, [auth]);
 
   if (loading) {
     return <div>Loading...</div>;

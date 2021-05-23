@@ -31,7 +31,8 @@ export const SignIn = () => {
   const [submitting, setSubmitting] = useState(false);
   const [loginError, setLoginError] = useState(null);
   const history = useHistory();
-  const [setAuth] = useContext(AuthContext);
+  const [auth, setAuth] = useContext(AuthContext);
+  console.log(auth);
 
   async function onSubmit(data) {
     setSubmitting(true);
