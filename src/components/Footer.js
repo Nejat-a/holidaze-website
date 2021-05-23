@@ -41,8 +41,8 @@ export default function Footer() {
           <div className="footer-link-items">
             <h2>Asets</h2>
             <div className="footer-about-text">
-              Many hotel images is downloaded from https://www.scandichotels.no.
-              This website is for education purposes only.
+              Many hotel images is downloaded from scandichotels.no. This
+              website is for education purposes only.
             </div>
           </div>
 
