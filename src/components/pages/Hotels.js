@@ -15,6 +15,7 @@ export const Hotels = () => {
         const response = await fetch(hotelsURL);
         if (response.ok) {
           const json = await response.json();
+          console.log(json);
           setHotels(json);
           setFilteredHotels(json);
         } else {
@@ -64,18 +65,25 @@ export const Hotels = () => {
       </header>
       <div className="hotel-card-row">
         {filteredHotels.map((hotel) => {
-          const { id, name, location, descriptions, features, price, rating } =
-            hotel;
-          let imgURL = hotel.image[0].url;
-          if (imgURL === undefined) {
-            imgURL = `/uploads/placeholder_65441b3664.png`;
+          let {
+            id,
+            name,
+            location,
+            descriptions,
+            features,
+            price,
+            rating,
+            imgURL,
+          } = hotel;
+          if (hotel.imgURL === null) {
+            imgURL =
+              "https://res.cloudinary.com/hb5n5nkav/image/upload/v1621779159/placeholder_ibkqxi.png";
           }
-
           return (
             <HotelCards
               key={id}
               id={id}
-              imgURL={`${BASE_URL}${imgURL}`}
+              imgURL={imgURL}
               name={name}
               location={location}
               rating={rating}
