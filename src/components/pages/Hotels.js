@@ -15,7 +15,6 @@ export const Hotels = () => {
         const response = await fetch(hotelsURL);
         if (response.ok) {
           const json = await response.json();
-          console.log(json);
           setHotels(json);
           setFilteredHotels(json);
         } else {
