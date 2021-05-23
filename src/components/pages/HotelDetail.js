@@ -46,8 +46,7 @@ export const HotelDetail = () => {
   if (error) {
     return <div>ERROR! An error has occured!</div>;
   }
-  const imgURL = hotels.image[0].url;
-  console.log(imgURL);
+
   const starImgURL = `https://school.super24.no/sage-img/${hotels.rating}.png`;
   const handleBooking = () => {
     setShowBookingForm(true);
@@ -61,7 +60,14 @@ export const HotelDetail = () => {
         </p>
         <div className="hotel-detail-card" key={hotels.id}>
           <div className="hotel-card-img">
-            <img src={`${BASE_URL}${imgURL}`} alt="hotel" />
+            <img
+              src={
+                hotels.imgURL === null
+                  ? "https://res.cloudinary.com/hb5n5nkav/image/upload/v1621779159/placeholder_ibkqxi.png"
+                  : hotels.imgURL
+              }
+              alt="hotel"
+            />
           </div>
           <div className="hotel-card-content">
             <h2 className="hotel-name">{hotels.name}</h2>
